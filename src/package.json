@@ -1,15 +1,12 @@
 {
-  "name": "onboarding",
+  "name": "src",
   "version": "1.0.0",
-  "description": "On-Boarding",
   "main": "index.js",
-  "repository": "git@github.com:mcatm/onboarding.git",
+  "license": "MIT",
   "scripts": {
-    "dev": "gulp"
+    "gulp": "gulp"
   },
-  "author": "mcatm",
-  "license": "ISC",
-  "devDependencies": {
+  "dependencies": {
     "gulp": "^4.0.2"
   }
 }
