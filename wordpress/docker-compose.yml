@@ -1,0 +1,26 @@
+version: '2'
+services:
+  wp:
+    build: .
+    container_name: ob_wp
+    volumes:
+      - ./html/assets:/var/www/html/assets
+      - ./var/log/apache:/var/log/apache2
+    ports:
+      - 80:80
+    links:
+      - mysql
+    env_file:
+      - .env
+  mysql:
+    image: mysql:5.7.21
+    container_name: ob_mysql
+    ports:
+      - 3306:3306
+    working_dir: /sql
+    volumes:
+      - ./var/database:/var/lib/mysql
+      - ./var/sql:/sql
+      - ./var/log/mysql:/var/log/mysql
+    env_file:
+      - .env
